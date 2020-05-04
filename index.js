@@ -9,9 +9,34 @@ const btn = document.querySelectorAll('button.buy');
 
  const handleClicks = (event) => {
    console.log('Click handled');
-   console.log(event.target.dataset);
+   console.log(event.target.dataset.price);
  }
 
  btn.forEach(function(btns){
      btns.addEventListener('click', handleClicks);
  });
+
+
+ const photoEl = document.querySelector('.photo');
+
+ photoEl.addEventListener('mousemove', function(e) {
+   console.count(e.currentTarget);
+ })
+
+ const logo = document.querySelector('.bytes');
+
+ logo.addEventListener('click', function (e){
+   e.preventDefault();
+ });
+
+const signupForm = document.querySelector('[name="signup"]');
+
+function logEvent(event) {
+  console.log(event.type);
+  console.log(event.currentTarget.value);
+}
+signupForm.name.addEventListener('keyup', logEvent);
+signupForm.email.addEventListener('keyup', logEvent);
+signupForm.name.addEventListener('keydown', logEvent);
+signupForm.name.addEventListener('focus', logEvent);
+signupForm.name.addEventListener('blur', logEvent);
