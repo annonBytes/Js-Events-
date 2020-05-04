@@ -8,8 +8,11 @@ console.log('loaded js');
 const btn = document.querySelectorAll('button.buy');
 
  const handleClicks = (event) => {
-   console.log('Click handled');
-   console.log(event.target.dataset.price);
+if(event.type === 'click' || event.key === 'Enter'){
+console.log('Click handled');
+}
+  
+  //  console.log(event.target.dataset.price);
  }
 
  btn.forEach(function(btns){
@@ -19,9 +22,8 @@ const btn = document.querySelectorAll('button.buy');
 
  const photoEl = document.querySelector('.photo');
 
- photoEl.addEventListener('mousemove', function(e) {
-   console.count(e.currentTarget);
- })
+ photoEl.addEventListener('click', handleClicks);
+ photoEl.addEventListener('keyup', handleClicks);
 
  const logo = document.querySelector('.bytes');
 
